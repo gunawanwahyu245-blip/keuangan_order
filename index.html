@@ -192,7 +192,7 @@ tr{break-inside:avoid}
 </defs></svg>
 <div class="app">
 <aside class="side" id="side">
-<div class="brand"><svg class="ico" style="width:36px;height:36px"><use href="#i-flask"/></svg><div><b>Labkesda Garut</b><small>Sistem Keuangan &amp; Operasional</small></div></div>
+<div class="brand"><svg class="ico" style="width:36px;height:36px"><use href="#i-flask"/></svg><div><b>Rifan Nugraha</b><small>Sistem Keuangan &amp; Operasional</small></div></div>
 <a data-go="dash"><svg class="ico"><use href="#i-home"/></svg>Dashboard</a>
 <a data-grp><svg class="ico"><use href="#i-coin"/></svg>Keuangan<span style="margin-left:auto">▴</span></a>
 <div class="sub" id="keu"><a data-go="modal" class="on"><svg class="ico"><use href="#i-doc"/></svg>Catatan Keuangan Order</a><a data-go="lap"><svg class="ico"><use href="#i-doc"/></svg>Laporan Keuangan</a></div>
@@ -234,7 +234,7 @@ tr{break-inside:avoid}
 </section>
 
 <section id="lap" hidden>
-<div class="phd"><h2>Laporan Keuangan Order — Labkesda Garut</h2><p>Periode: <span id="pper"></span> · Dicetak: <span id="ptgl"></span></p></div>
+<div class="phd"><h2>Laporan Keuangan Order — Rifan Nugraha</h2><p>Periode: <span id="pper"></span> · Dicetak: <span id="ptgl"></span></p></div>
 <div class="tools"><label>Bulan <input type="month" id="bln"></label><button class="btn s" id="all">Semua bulan</button><button class="btn s" id="prn">Cetak / PDF</button><button class="btn s" id="xls">Ekspor Excel</button></div>
 <div class="grid">
 <div class="box"><h2>Laporan Keuangan</h2>
@@ -251,7 +251,7 @@ tr{break-inside:avoid}
 </main>
 </div></div>
 <div class="scrim" id="scrim"></div>
-<div id="login" hidden><form id="lf"><svg class="ico" style="width:40px;height:40px;color:var(--acc)"><use href="#i-flask"/></svg><h2>Labkesda Garut</h2><p>Masuk untuk membuka Catatan Keuangan Order</p>
+<div id="login" hidden><form id="lf"><svg class="ico" style="width:40px;height:40px;color:var(--acc)"><use href="#i-flask"/></svg><h2>Rifan Nugraha</h2><p>Masuk untuk membuka Catatan Keuangan Order</p>
 <label>Email<input type="email" id="lem" autocomplete="username" required></label><label>Kata sandi<input type="password" id="lpw" autocomplete="current-password" required></label>
 <div id="lerr"></div><button class="btn" style="width:100%">Masuk</button></form></div>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
@@ -307,8 +307,8 @@ $('#fm').innerHTML=`
 <tr><td class="l">${o.tipe==='diskon'?'Laba per 1 barang':'Untung (Rp) per 1 barang'}</td><td colspan="2" class="r" id="v_u1"></td></tr>
 <tr><td class="l">Harga jual satuan</td><td colspan="2" class="y"><input class="n m" id="f_jual" inputmode="numeric" value="${o.jualS?nf(o.jualS):''}"></td></tr>
 <tr><td class="l">Total harga jual (jumlah × satuan)</td><td colspan="2" class="r" id="v_tj"></td></tr>
-<tr><td class="l">PPn <select id="f_ppnon"><option value="1" ${o.ppnOn!==false?'selected':''}>Kena</option><option value="0" ${o.ppnOn===false?'selected':''}>Tidak</option></select> (%)</td><td><input class="n" id="f_ppn" inputmode="decimal" value="${o.ppn}"></td><td class="r" id="v_ppn"></td></tr>
-<tr><td class="l">PPh <select id="f_pphon"><option value="1" ${o.pphOn!==false?'selected':''}>Kena</option><option value="0" ${o.pphOn===false?'selected':''}>Tidak</option></select> (%)</td><td><input class="n" id="f_pph" inputmode="decimal" value="${o.pph}"></td><td class="r" id="v_pph"></td></tr>
+<tr><td class="l">PPn <select id="f_ppnon"><option value="1" ${o.ppnOn!==false?'selected':''}>Iya</option><option value="0" ${o.ppnOn===false?'selected':''}>Tidak</option></select> (%)</td><td><input class="n" id="f_ppn" inputmode="decimal" value="${o.ppn}"></td><td class="r" id="v_ppn"></td></tr>
+<tr><td class="l">PPh <select id="f_pphon"><option value="1" ${o.pphOn!==false?'selected':''}>Iya</option><option value="0" ${o.pphOn===false?'selected':''}>Tidak</option></select> (%)</td><td><input class="n" id="f_pph" inputmode="decimal" value="${o.pph}"></td><td class="r" id="v_pph"></td></tr>
 <tr><td class="l">${o.tipe==='diskon'?'Total tagihan (jual − pajak)':'Total tagihan (jual + pajak)'}</td><td colspan="2" class="r" id="v_tot"></td></tr>
 ${o.tipe==='diskon'?'<tr><td class="l">Laba <select id="f_lp"><option value="setelah">Setelah pajak</option><option value="sebelum"'+(o.lp==='sebelum'?' selected':'')+'>Sebelum pajak</option></select></td><td colspan="2" class="r g" id="v_laba"></td></tr>':'<tr><td class="l">Laba</td><td colspan="2" class="r g" id="v_laba"></td></tr>'}`;
 $('#fm').oninput=e=>{if(e.target.classList.contains('m'))fmtIn(e.target);if(e.target.id==='f_jual')jualManual=true;readForm(e.target.id);};
